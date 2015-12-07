@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>webapp jquery mobile</title>
+    <meta name="description" content="">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/custom-theme/custom-theme.min.css" />
+    <link rel="stylesheet" href="styles/custom-theme/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+<!--
+    <link rel="stylesheet" href="styles/themes/red.min.css" />
+-->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <!-- home page -->
+    <div data-role="page" id="home">
+        <header data-role="header" data-position="fixed">
+            <h1>Hello JQM</h1>
+            <a href="#menu-panel-main" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" data-role="button" role="button">Menu</a>
+        </header>
+<div data-role="header" style="overflow:hidden;" data-theme="b">
+    <h1>I'm a header</h1>
+    <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+    <div data-role="navbar" class="nolist">
+        <ul>
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /header -->
+        <main data-role="main" class="ui-content">
+                <div class="jqm-block-content">
+                    <h2>You now have</h2>
+                    <ul>
+                    <li>HTML5 Boilerplate</li>
+                    <li>Sass</li>
+                    <li>Modernizr</li>
+                    <li>Jquery Mobile</li>
+                    </ul>
+						<div>
+							<h3>Yeoman環境設定</h3>
+							<p><span>参考サイト</span><a href="http://qiita.com/Syn/items/f700b325e07222b64960">http://qiita.com/Syn/items/f700b325e07222b64960</a></p>
+							<h4>準備</h4>
+							<h5>①Node.js インストール</h5>
+							<p>Yeoman は Node.js 上で動くので、 Node.js をインストールしておく。</p>
+							<h6>ダウンロード</h6>
+							<p><a href="http://nodejs.org/download/">http://nodejs.org/download/</a></p>
+							<h6>インストール</h6>
+								<div>
+									<p>node-v0.10.35-x86.msiを実行</p>
+									<p>デフォルトのインストール要件でインストール</p>
+									<p>npm も同時にインストールされる</p>
+									<p class="restart">再起動</p>
+									<p>コマンド プロンプトでインストール結果確認</p>
+								</div>
+								<div>
+<pre>
+Node –v
+10.35
+Npm –v
+1.4.28
+</pre>
+								</div>
+							<h5>②Ruby インストール</h5>
+							<p>ひな形に含まれる SCSS をコンパイルするのに Compass が必要。</p>
+							<p>Compass は Ruby で書かれたアプリなので、 Ruby をインストールしておく</p>
+							<h6>ダウンロード</h6>
+							<p><a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a></p>
+							<p>最新版 rubyinstaller-2.1.5 .exe をダウンロード</p>
+							<h6>インストール</h6>
+							<p>「インストール先とオプションの指定」画面で、「Ruby の実行ファイルに環境変数 PATH を設定する」にチェックを入れる</p>
+							<p>他はデフォルトのインストール要件でインストール</p>
+							<p>参考サイト　<a href="http://www.rubylife.jp/install/install/index1.html#section2">http://www.rubylife.jp/install/install/index1.html#section2</a></p>
+								<div>
+<pre>
+ruby –v
+ruby 2.1.5p273 (2014-11-13 revision 48405) [i386-mingw32]
+gem –v
+2.2.2
+</pre>
+								</div>
+							<p class="restart">再起動</p>
+							<h5>③Bundler, Compass インストール</h5>
+							<p>gem を最新版に更新し、 Bundler と Compass をインストールする</p>
+								<div>
+<pre>
+gem update –system
+gem install bundler
+gem install compass
+</pre>
+								</div>
+							<p>ここでおそらくエラーが出ると思いますので下記サイト参照して、下記手順を行う。</p>
+							<p>参照　<a href="http://qiita.com/shimoju/items/394818b4989b94680aaf">http://qiita.com/shimoju/items/394818b4989b94680aaf</a></p>
+								<div>
+									<p>手順</p>
+									<p>1. 新しい証明書ファイルをダウンロードする</p>
+									<p><a href="https://gist.github.com/luislavena/f064211759ee0f806c88#step-1-obtain-the-new-trust-certificate">Step 1: Obtain the new trust certificate</a>から、「AddTrustExternalCARoot-2048.pem」を右クリックし名前を付けて保存でダウンロードする。</p>
+									<p>.pemという拡張子でなければならないので、きちんとこの拡張子でダウンロードされているか確認する。</p>
+									<p>2. RubyGemsがあるフォルダに移動するC:/Ruby21/lib/ruby/2.1.0/rubygemsに移動する</p>
+									<p>3. ダウンロードした証明書ファイルをコピーする</p>
+									<p>移動したフォルダにssl_certsフォルダがあるので、ダウンロードした「AddTrustExternalCARoot-2048.pem」をそこにコピーする。</p>
+									<p>４．コピーできれば、コマンド　プロンプトで、③Bundler, Compass をインストールする。</p>
+								</div>
+							<h5>④Git インストール</h5>
+							<p>Bower を使用するのに Git が必要なので、 Git for Windows をインストールしておく。</p>
+							<h6>ダウンロード</h6>
+							<p><a href="http://msysgit.github.io/">http://msysgit.github.io/</a></p>
+							<p>最新版 Git-1.9.5-preview20141217.exeをダウンロード</p>
+							<h6>インストール</h6>
+							<p>参照：<a href="http://codezine.jp/article/detail/7077?p=2">http://codezine.jp/article/detail/7077?p=2</a></p>
+							<p>インストール途中 “Adjusting your PATH environment” の画面でコマンドライン使用について聞いてくるので、 “Use Git from the Windows Command Prompt” を選択する</p>
+							<p>他はデフォルトのインストール要件でインストール</p>
+							<p class="restart">再起動</p>
+								<div>
+<pre>
+git  --version
+git version 1.9.5.msysgit.0
+</pre>
+								</div>
+							<h5>⑤Yeoman インストール</h5>
+							<p>npmを使用してyo, grunt, bowerをインストールする。</p>
+<pre>
+npm install -g yo grunt-cli bower
+</pre>
+							<p>コマンド　プロンプトで、ディレクトリ作成</p>
+<pre>
+cd c:\
+mkdir project & cd project
+</pre>
+							<p>これで、ｃ直下にprojectホルダーができる。</p>
+							<p>次に、GITのコマンドプロンプトで、Yeomanをwebappする。</p>
+<pre>
+cd c:\project
+npm install -g generator-webapp
+yo webapp
+npm install && bower install
+grunt serve
+</pre>
+							<p>以上で、Yeomanの環境が完了します。</p>
+
+					</div>
+						<div>
+							<h3>Git　Hubで共有作業</h3>
+							<h4>①まずは、各自でGitアカウントをもつ。</h4>
+
+							<h4>②新しいリポジトリを作成する。</h4>
+							<h5>親の作業</h5>
+							<p>git init</p>
+							<p>git add .</p>
+							<p>git status</p>
+							<p>git commit -a -m"first commit"</p>
+							<p>git status</p>
+							<h4>③github.comにサインインして、メニューバーの＋▼からNew repositoryを選ぶ</h4>
+							<p>例　https://github.com/okamotoT</p>
+							<p>・Repository name　作成</p>
+							<p>・New collaboratar　登録（メンバー：ユーザー名）</p>
+							<h5>子の作業(clone）</h5>
+							<p>例</p>
+							<p>cd c:\</p>
+							<p>git clone <span>https://github.com/okamotoT/TEST-SITE.git</span></p>
+							<p><span>↑　HTTPS clone URL</span></p>
+							<p>cd c:\TEST-SITE\</p>
+							<p>npm install && bower install</p>
+							<p>git status</p>
+							<p>grunt serve　　ブラウザー確認</p>
+							<p>***************************************</p>
+							<h5>作業(メンバー）</h5>
+							<p>git add .</p>
+							<p>git status</p>
+							<p>git pull</p>
+							<p>git commit -a -m"修正内容"</p>
+							<p>git push origin master</p>
+							<p>***************************************</p>
+							<h5>branch</h5>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>git checkout master</p>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>git branch topic -new -contents</p>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>git branch newname</p>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>git push origin newname</p>
+							<h5>pull　リクエスト</h5>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>OKの場合：マージリクエスト</p>
+							<p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>マスターにマージが追加</p>
+						</div>
+                </div>
+                <div class="home-button-area">
+                    <button id="gotoJqm" data-icon="heart" data-iconpos="bottom" data-theme="b">Enjoy jQuery Mobile!</button>
+                    <button id="gotoThemeroller" data-icon="eye" data-iconpos="bottom" data-theme="c">Go To ThemeRoller!</button>
+                </div>
+                <div class="ui-icon-alt"><!-- Class added to the wrapper -->
+                <a href="#" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="c" data-inline="true">Bars</a>
+                </div>
+<a href="page-transitions-page.html" data-role="button" data-transition="fade" data-inline="true">page</a>
+        </main>
+        <div class="ui-body-a ui-body" data-theme="c">
+            <h3>Swatch "a"</h3>
+            <div data-role="navbar">
+                <ul class="bt01">
+                    <li><a href="#" data-icon="grid">A</a></li>
+                    <li><a href="#" data-icon="star">B</a></li>
+                    <li><a href="#" data-icon="gear">C</a></li>
+                    <li><a href="#" data-icon="arrow-l">D</a></li>
+                    <li><a href="#" data-icon="arrow-r">E</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /container -->
+        <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" id="menu-panel-main">
+            <ul data-role="listview" class="jqm-list ui-alt-icon ui-nodisc-icon">
+                <li data-icon="home"><a>Home</a></li>
+                <li data-icon="search"><a href="#search">Search</a></li>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+            </ul>
+        </div>
+        <footer data-role="footer" data-position="fixed" data-fullscreen="false">
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="http://www.bathtimefish.com" data-icon="action">Author's Page</a></li>
+                    <li><a href="#information" data-icon="info" data-rel="dialog" data-transition="pop">About</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- search page -->
+    <div data-role="page" id="search">
+        <header data-role="header" data-position="fixed">
+            <h1>Search</h1>
+            <a href="#menu-panel-search" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" data-role="button" role="button">Menu</a>
+        </header>
+        <main data-role="main" class="ui-content">
+            <h2>Keyword Search</h2>
+            <form>
+                <input data-type="search" id="searchForCollapsibleSetChildren">
+            </form>
+            <div data-role="collapsible-set" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+                <div data-role="collapsible" data-filtertext="Animals Cats Dogs Lizards snakes" data-collapsed="false">
+                    <h3>Animals</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="Animals Cats">Cats</li>
+                        <li data-filtertext="Animals Dogs">Dogs</li>
+                        <li data-filtertext="Animals Lizards">Lizards</li>
+                        <li data-filtertext="Animals Snakes">Snakes</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-filtertext="Cars Acura Audi BMW Cadillac">
+                    <h3>Cars</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="Cars Acura">Acura</li>
+                        <li data-filtertext="Cars Audi">Audi</li>
+                        <li data-filtertext="Cars BMW">BMW</li>
+                        <li data-filtertext="Cars Cadillac">Cadillac</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-filtertext="Planets Earth Jupiter Mars Mercury">
+                    <h3>Planets</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="Planets Acura">Earth</li>
+                        <li data-filtertext="Planets Jupiter">Jupiter</li>
+                        <li data-filtertext="Planets Mars">Mars</li>
+                        <li data-filtertext="Planets Mercury">Mercury</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" id="menu-panel-search">
+            <ul data-role="listview" class="jqm-list ui-alt-icon ui-nodisc-icon">
+                <li data-icon="home"><a href="#home">Home</a></li>
+                <li data-icon="search"><a>Search</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- information dialog -->
+    <div data-role="page" id="information">
+        <header data-role="header">
+            <h1>About</h1>
+        </header>
+        <main data-role="main" class="ui-content">
+            <p>webapp-jquery-mobile</p>
+            <a href="http://github.com/bathtimefish/webapp-jquery-mobile">Github</a>
+        </main>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

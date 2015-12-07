@@ -1,0 +1,35 @@
+// bower:scss
+// endbower
+
+.jqm-block-content {
+	margin: .5em;
+	padding: 1em;
+	background: #fff;
+	border: 1px solid #eee;
+	-webkit-border-radius: .3125em;
+	border-radius: .3125em;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #3eb249;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: .25em;
+	margin: 0 0 .5em;
+}
+
+.home-button-area {
+  margin: 3em .5em;
+  button {
+    margin-bottom: 1em;
+  }
+}
+.nolist li {
+	list-style-type: none;
+}
+ul.bt01 li {
+	list-style-type: none;
+}
+.ui-page { -webkit-backface-visibility: hidden; } 

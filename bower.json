@@ -1,0 +1,10 @@
+{
+  "name": "webapp-jquery-mobile",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "jquery": "~1.11.1",
+    "jquery-mobile-bower": "~1.4.2"
+  },
+  "devDependencies": {}
+}
